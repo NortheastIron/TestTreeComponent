@@ -7,6 +7,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
-export class AppComponent {
-  title = 'test-tree2';
-}
+export class AppComponent {}

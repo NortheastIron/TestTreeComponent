@@ -1,0 +1,1 @@
+export type { TDataBase } from './data-base.type';

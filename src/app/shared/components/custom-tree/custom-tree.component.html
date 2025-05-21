@@ -1,0 +1,16 @@
+<mat-tree class="app-custom-tree" #tree [dataSource]="data()" [childrenAccessor]="childrenAccessor">
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+      <button mat-icon-button disabled></button>
+      {{node.id}} - {{node.title}}
+    </mat-tree-node>
+    <mat-tree-node [class.deleted]="node.is_deleted" *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle
+                   [cdkTreeNodeTypeaheadLabel]="node.id.toString()">
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.id + ' - ' + node.title">
+        <mat-icon>
+          {{tree.isExpanded(node) ? 'expand_less' : 'expand_more'}}
+        </mat-icon>
+      </button>
+      {{node.id}} - {{node.title}}
+    </mat-tree-node>
+  </mat-tree>
